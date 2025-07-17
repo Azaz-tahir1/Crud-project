@@ -1,0 +1,85 @@
+
+.backg img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.uper {
+  padding: 30px;
+  border: 1px solid red;
+  position: relative;
+  bottom: 300px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.uper h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+table th {
+  background-color: #444;
+  color: white;
+}
+table td{
+  color: #fff;
+}
+.come {
+  display: flex;
+  gap: 10px;
+}
+.come a{
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid black;
+}
+
+.plus {
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.plus:hover {
+  background-color: #222;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.pagination a {
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  color: #fff;
+  background:transparent ;
+}
+
+.pagination a.active {
+  background-color: #333;
+  color: black;
+  border-color: #333;
+}

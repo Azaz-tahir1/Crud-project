@@ -1,0 +1,121 @@
+ <h2>All Students</h2>
+
+  <!-- Create form -->
+  <form action="/add" method="POST" style="margin-bottom: 20px;">
+    <input type="text" name="name" placeholder="Enter name" required />
+    <input type="text" name="age" placeholder="Enter age" required />
+    <button type="submit" class="btn btn-add">+ Add New</button>
+  </form>
+
+  <!-- Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% students.forEach((student, i) => { %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><%= student.name %></td>
+          <td><%= student.age %></td>
+        
+        
+          <td>
+            <a href="/change/<%= student._id %>" class="btn btn-edit">Edit</a>
+
+            <!-- Delete form -->
+            <form action="/delete/<%= student._id %>" method="POST" style="display:inline-block;" onsubmit="return confirm('Are you sure?');">
+              <button type="submit" class="btn btn-delete">Delete</button>
+            </form>
+
+
+          </td>
+
+          
+
+
+        </tr>
+
+
+      <% }); %>
+
+
+    </tbody>
+
+    
+  </table>
+
+
+
+   body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .btn {
+      padding: 6px 10px;
+      text-decoration: none;
+      color: white;
+      border-radius: 4px;
+      margin-right: 5px;
+      font-size: 14px;
+    }
+    .btn-add {
+      background-color: green;
+    }
+    .btn-show {
+      background-color: blue;
+    }
+    .btn-edit {
+      background-color: orange;
+    }
+    .btn-delete {
+      background-color: red;
+    }
+
+
+
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="change.css">
+</head>
+<body>
+  
+    <div class="free">
+    <h1>update student</h1>
+    <form action="/change<%= student._id %>" method="post">
+
+
+   <input type="text" value="<%= student.name %>" >
+   <input type="text" value="<%= student.age %>" >
+    <button type="submit">UPDATE</button>
+
+
+    </form>      
+    </div>
+</body>
+</html>

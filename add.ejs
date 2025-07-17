@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+
+  .free{
+    width: 28%;
+    height: 430px;
+    background-color: #f1f2f6;
+    padding: 30px;
+    position: relative;
+    left: 30%;
+    border: 1px ;
+    border-radius: 2%;
+    top: 30px;
+    box-shadow: 2px 2px 5px #4b6584 ;
+}
+
+h1{
+    color: red;
+}
+
+  #anch a{
+    height: 80px;
+    width: 35%;
+    padding:12px 22px;
+    border: 1px solid black;
+    background-color: black;
+    text-decoration: none;
+    color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1.2px;
+  }
+  #anch{
+    position: relative;
+    bottom: 7%;
+    left: 35%;
+    
+  }
+  button{
+    padding: 12.9px 20px;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+        letter-spacing: 1.2px;
+
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  input{
+    width: 50%;
+    height: 20px;
+    border: 1px solid #4b6584;
+  }
+  label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+
+</style>
+
+
+</head>
+<body>
+  
+    <div class="free">
+    <h1 style="color: #4b6584;" >Add student</h1>
+    
+    
+    <form action="/add" method="post">
+
+   <label for="">First_name</label><br>
+   <input type="text"  name="First_name"  value=""   required ><br><br>
+
+
+    <label for="">Last_name</label><br>
+   <input type="text"  name="Last_name"  value=""   required><br><br>
+
+
+
+      <label for="">Age</label><br>
+  
+
+<input type="text"  name="Age" value=""  required ><br><br>
+
+
+ <label for="">Course</label><br>
+   <input type="text"  name="Course"  value=""   required ><br><br>
+
+
+    <label for="">Email</label><br>
+   <input type="text"  name="Email"  value=""   required ><br><br><br>
+
+    <button type="submit">Add</button>
+
+
+    </form>      
+
+   <div id="anch"><a href="/">Cancel</a></div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Students</title>
+  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+  <div class="backg">
+    <img src="work.jpg" alt="">
+  </div>
+
+  <div class="uper">
+    <h1>Student Management System</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First_name</th>
+          <th>Last_name</th>
+          <th>Age</th>  
+          <th>Course</th>  
+          <th>Email</th>  
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% students.forEach((student, i) => { % >
+          <tr>
+            <td><%= (currentPage - 1) * limit + i + 1 %></td>
+            <td><%= student.First_name %></td>
+            <td><%= student.Last_name %></td>
+            <td><%= student.Age %></td>
+            <td><%= student.Course %></td>
+            <td><%= student.Email %></td>
+            <td>
+              <div class="come">
+                <a href="/change/<%= student._id %>">Edit</a>
+                <form action="/delete/<%= student._id %>" method="post">
+                  <button type="submit">Delete</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+
+        <% }) %>
+
+      </tbody>
+    </table>
+
+    <a href="/add" class="plus">Add more</a>
+
+    <!-- ✅ Pagination -->
+    <div class="pagination">
+      <% if (hasPrevPage) { %>
+        <a href="/?page=<%= prevPage %>">Prev</a>
+      <% } %>
+      <% for (let i = 1; i <= totalPages; i++) { %>
+        <a href="/?page=<%= i %>" class="<%= currentPage === i ? 'active' : '' %>"><%= i %></a>
+      <% } %>
+      <% if (hasNextPage) { %>
+        <a href="/?page=<%= nextPage %>">Next</a>
+      <% } %>
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="/home.js"></script>
+</body>
+</html>
